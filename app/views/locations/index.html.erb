@@ -1,0 +1,11 @@
+
+	<h2>Lists of the locations!!!</h2>
+	<% @location.each do |location| %>
+	<div class="col-md-4">
+		<div class="message">
+			<h3 class="message-title"><%= location.name %></h3>
+			<%= link_to "View Locations", location_path(location), class: 'btn-custom' %>
+		</div>
+	</div>
+
+	<% end %>

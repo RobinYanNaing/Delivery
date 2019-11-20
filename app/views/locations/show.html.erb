@@ -1,0 +1,22 @@
+<div class="col-md-8 col-md-offset-2">
+	<div class="message-show">
+		<%= image_tag @location.location_img.url(:medium), class: "location-show" %>
+		<h2><%= @location.name %></h2>
+		<p class="location-posted-by">This Location is created by <%= @location.user.email %> <%= time_ago_in_words(@location.created_at) %> ago.</p>
+		<p class="location-direction"><%=  @location.direction %></p>
+		<p>The Phone number is 09<%=  @location.phone %></p>
+		<%= link_to "Map Location", @location.map , class: "btn btn-default" %>
+		<div>
+			<div class="links btn-group">
+
+				<%= link_to "Back", root_path, class: "btn btn-default" %>
+
+				<%# <% if @location.user_id == current_user %>
+					<%= link_to "Edit", edit_location_path(@location), class: "btn btn-default" %>
+
+					<%= link_to "Delete", location_path(@location) , method: :delete, data: {confirm: "Are You Sure You want to delete this Location "}, class: "btn btn-default" %>
+					<%# <% end %>
+			</div>
+		</div>
+	</div>
+</div>
