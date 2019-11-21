@@ -1,11 +1,32 @@
+<div class="row">
+	<div class="col-md-3">
+		<h3> You can Search Your Location in Here!!!
+			<a><%= form_for "",url: locations_path, role: "search" , method: :get do %>
+			<%= text_field_tag :search, @search_tearm,placeholder: "Location Name....." %>
+			<% end %></a>
+		</h3>
 
-	<h2>Lists of the locations!!!</h2>
-	<% @location.each do |location| %>
-	<div class="col-md-4">
-		<div class="message">
-			<h3 class="message-title"><%= location.name %></h3>
-			<%= link_to "View Locations", location_path(location), class: 'btn-custom' %>
-		</div>
+		<div class="dropdown">
+				 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose Category
+				 <span class="caret"></span></button>
+				 <ul class="dropdown-menu">
+					 <% Category.all.each do |category| %>
+					 <li class="<%= 'active' if params[:category] == category.name %>">
+						 <%= link_to category.name, locations_path(category: category.name), class: "link" %>
+					 </li>
+						 <% end %>
+				 </ul>
+			 </div>
 	</div>
-
-	<% end %>
+	<div class="col-md-9">
+			<h2>Lists of the locations!!!</h2>
+		<% @location.each do |location| %>
+		<div class="col-md-4">
+			<div class="message">
+				<h3 class="message-title"><%= location.name %></h3>
+				<%= link_to "View Locations", location_path(location), class: 'btn-custom' %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

@@ -127,6 +127,7 @@ GEM
       mime-types
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
+    pg (1.1.4-x86-mingw32)
     public_suffix (4.0.1)
     puma (3.12.1)
     rack (2.0.7)
@@ -234,6 +235,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.5)
   paperclip (~> 6.1)
+  pg
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails (~> 5.0)

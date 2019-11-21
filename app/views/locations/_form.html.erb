@@ -1,8 +1,11 @@
 <%= simple_form_for @location do |f| %>
+  <div class="field">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+  </div>
   <%= f.input :name, label: 'Enter the location name please', error: 'This location is mandatory, please specify one' %>
   <%= f.input :location_img, label: 'Upload plz' %>
   <%= f.input :direction , label: 'Enter the Details direction name please' %>
-  <%= f.input :phone,  label: 'Do not Enter (09) plz', hint: "Example: 450001930" %>
+  <%= f.input :phone,  label: 'Phone Number(Do not Enter (09) plz)', hint: "Example: 450001930" %>
   <%= f.input :map, label: 'Use the map direction from Google Map!' %>
   <%= f.button :submit %>
 <% end %>
